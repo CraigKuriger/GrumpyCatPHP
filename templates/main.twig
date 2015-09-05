@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  {% block head %}
+    <meta charset="utf-8">
+    <title>{% block title %}Grumpy Cat{% endblock title %}</title>
+    <meta name="description" content="Grumpy Cat">
+    <meta name="author" content="Craig Kuriger">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/master.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/global.js"></script>
+  {% endblock head %}
+</head>
+
+<body>
+
+  <header>
+    <h1>Grumpy Cat</h1>
+    <nav>
+      <a href="{{ baseUrl() }}" class="selected">About</a>
+      <a href="{{ siteUrl('/contact') }}">Contact</a>
+    </nav>
+  </header>
+
+  <div class="grumpy">
+    {% block hero %}<img src="images/grumpy.jpg" alt="Picture of Grumpy Cat">{% endblock hero %}
+  </div>
+
+  <main>
+    {% block content %}
+    {% endblock content %}
+  </main>
+
+  <footer>
+    {% block footer %}
+      <p>A project from <strong><a href="http://craigkuriger.github.io">Craig Kuriger</a></strong></p>
+      <nav>
+        <a href="{{ baseUrl() }}" class="selected">About</a>
+        <a href="{{ siteUrl('/contact') }}">Contact</a>
+      </nav>
+    {% endblock footer %}
+  </footer>
+
+</body>
+</html>
